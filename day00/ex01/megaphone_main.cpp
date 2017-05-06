@@ -12,7 +12,7 @@ void	search_function(Contact *contact)
 
 	i = 0;
 	nb_contact = Contact::getNbContact();
-	std::cout << "|index     |first_name|last_name |nickname  |"
+	std::cout << "|index     |first_name|last_name |nickname  |";
 	while (i < nb_contact)
 	{
 		std::cout << "|" << i + 1 << "         |";

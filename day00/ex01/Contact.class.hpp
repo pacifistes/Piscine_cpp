@@ -10,22 +10,22 @@ public:
 	Contact( void );
 	~Contact( void );
 
-	static int 	getNbContact( void );
+	static int 	getNbContact( void );//fonction static ne peuv etre const
 	static void	increment_nb(void);
 
 	void	add_contact( void );
-	void	print_contact(void);
+	void	print_contact(void) const;
 
-	std::string	get_first_name( void );
-	std::string	get_last_name( void );
-	std::string	get_nickname( void );
-	std::string	get_login( void );
-	std::string	get_post_address( void );
-	std::string	get_phone_number( void );
-	std::string	get_birthday_date( void );
-	std::string	get_favorite_meal( void );
-	std::string	get_underwear_color( void );
-	std::string	get_darkest_secret( void );
+	std::string	get_first_name( void ) const;
+	std::string	get_last_name( void ) const;
+	std::string	get_nickname( void ) const;
+	std::string	get_login( void ) const;
+	std::string	get_post_address( void ) const;
+	std::string	get_phone_number( void ) const;
+	std::string	get_birthday_date( void ) const;
+	std::string	get_favorite_meal( void ) const;
+	std::string	get_underwear_color( void ) const;
+	std::string	get_darkest_secret( void ) const;
 
 	void		set_first_name( std::string str );
 	void		set_last_name( std::string str );

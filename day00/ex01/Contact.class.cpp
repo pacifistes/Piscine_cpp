@@ -24,7 +24,7 @@ void	Contact::increment_nb(void)
 	Contact::_nbContact += 1;
 }
 
-void	Contact::print_contact(void)
+void	Contact::print_contact(void) const
 {
 	std::cout << "first name : " << this->get_first_name() << std::endl;
 	std::cout << "last name : " << this->get_last_name() << std::endl;
@@ -86,46 +86,46 @@ void	Contact::add_contact(void)
 }
 
 
-std::string	Contact::get_first_name(void)
+std::string	Contact::get_first_name(void) const
 {
 	return this->_first_name;
 }
 
-std::string	Contact::get_last_name(void)
+std::string	Contact::get_last_name(void) const
 {
 	return this->_last_name;
 }
-std::string	Contact::get_nickname(void)
+std::string	Contact::get_nickname(void) const
 {
 	return this->_nickname;
 }
-std::string	Contact::get_login(void)
+std::string	Contact::get_login(void) const
 {
 	return this->_login;
 }
-std::string	Contact::get_post_address(void)
+std::string	Contact::get_post_address(void) const
 {
 	return this->_post_address;
 }
-std::string	Contact::get_phone_number(void)
+std::string	Contact::get_phone_number(void) const
 {
 	return this->_phone_number;
 }
 
-std::string	Contact::get_birthday_date(void)
+std::string	Contact::get_birthday_date(void) const
 {
 	return this->_birthday_date;
 }
-std::string	Contact::get_favorite_meal(void)
+std::string	Contact::get_favorite_meal(void) const
 {
 	return this->_favorite_meal;
 }
 
-std::string	Contact::get_underwear_color(void)
+std::string	Contact::get_underwear_color(void) const
 {
 	return this->_underwear_color;
 }
-std::string	Contact::get_darkest_secret(void)
+std::string	Contact::get_darkest_secret(void) const
 {
 	return this->_darkest_secret;
 }

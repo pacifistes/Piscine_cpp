@@ -14,7 +14,7 @@ public:
 	Pony( std::string pony_name );
 	~Pony( void );
 
-
+	void tryToFly(void) const;
 };
 
 #endif

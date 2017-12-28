@@ -12,9 +12,9 @@ private:
 	std::string	_type;
 
 public:
-	Zombie( std::string name, std::string type );
-	~Zombie( void );
-	void	announce( void );
+	Zombie(std::string name, std::string type);
+	~Zombie(void);
+	void	announce(void) const;
 
 
 };

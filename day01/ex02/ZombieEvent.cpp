@@ -1,31 +1,24 @@
 #include "ZombieEvent.hpp"
 
-ZombieEvent::ZombieEvent( void )
-{
-	std::cout << "constructor called" << std::endl;
+ZombieEvent::ZombieEvent(void) {
 	return;
 }
 
-ZombieEvent::~ZombieEvent ( void )
-{
-	std::cout << "destructeur called" << std::endl;
+ZombieEvent::~ZombieEvent (void) {
 	return;
 }
 
-void	ZombieEvent::setZombieType(std::string str)
-{
+void	ZombieEvent::setZombieType(std::string str) {
 	this->_type = str;
 }
 
-Zombie* ZombieEvent::newZombie(std::string name)
-{
+Zombie* ZombieEvent::newZombie(std::string name) {
 	return (new Zombie(name, this->_type));
 }
 
 
 
-std::string	random_name()
-{
+std::string	random_name() {
 	std::string name;
 	int i;
 	std::string	alpha("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ");
@@ -37,12 +30,10 @@ std::string	random_name()
 		name += alpha[rand() % alpha.size()];
 		i++;
 	}
-
 	return name;
 }
 
-void	ZombieEvent::randomChump(void)
-{
+void	ZombieEvent::randomChump(void) {
 	Zombie randomZombie = Zombie(random_name(), this->_type);
 	randomZombie.announce();
 }

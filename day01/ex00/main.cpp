@@ -1,24 +1,26 @@
 #include "Pony.hpp"
 
-
 void	ponyOnTheHeap()
 {
-	Pony* Onheap = new Pony("Carambar");
+	Pony* onHeap = new Pony("Tornado");
 
-	delete Onheap;
+	onHeap->tryToFly();
+	delete onHeap;
 	std::cout << "This is the end of the pony function" << std::endl;
 }
 
 void	ponyOnTheStack()
 {
-	Pony Onstack = Pony("Galopin");//on the stack
+	Pony onStack = Pony("Galopin");
+	onStack.tryToFly();
 	std::cout << "This is the end of the function" << std::endl;
 }
 
 int main()
 {
+	std::cout << "pony on the heap : " << std::endl;
 	ponyOnTheHeap();
+	std::cout << "pony on the stack : " << std::endl;
 	ponyOnTheStack();
-
 	return 0;
 }

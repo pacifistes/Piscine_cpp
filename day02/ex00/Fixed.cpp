@@ -19,11 +19,11 @@ Fixed::~Fixed(void) {
 
 int Fixed::getRawBits(void) const {
 	std::cout << "getRawBits member function called" << std::endl;
-	return this->_pointValue / (2 << this->_fractionalBit);
+	return this->_pointValue;
 }
 
 void Fixed::setRawBits(int const raw) {
-	this->_pointValue = raw * (2 << this->_fractionalBit);
+	this->_pointValue = raw;
 }
 
 Fixed	&Fixed::operator=(Fixed const &src) {

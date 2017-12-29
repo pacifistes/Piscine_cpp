@@ -9,13 +9,13 @@ Fixed::Fixed(void) : _pointValue(0) {
 
 Fixed::Fixed(int const value) {
 	std::cout << "Int constructor called" << std::endl;
-	this->_pointValue = value * (2 << this->_fractionalBit);
+	this->_pointValue = value * (2 << (this->_fractionalBit - 1));
 	return;
 }
 
 Fixed::Fixed(float const value) {
 	std::cout << "Float constructor called" << std::endl;
-	this->_pointValue = value * (2 << this->_fractionalBit);
+	this->_pointValue = roundf(value * (2 << (this->_fractionalBit - 1)));
 	return;
 }
 
@@ -31,20 +31,19 @@ Fixed::~Fixed(void) {
 }
 
 int Fixed::getRawBits(void) const {
-	std::cout << "getRawBits member function called" << std::endl;
-	return this->_pointValue / (2 << this->_fractionalBit);
+	return this->_pointValue;
 }
 
 void Fixed::setRawBits(int const raw) {
-	this->_pointValue = raw * (2 << this->_fractionalBit);
+	this->_pointValue = raw;
 }
 
 int	Fixed::toInt(void) const {
-	return this->_pointValue / (2 << this->_fractionalBit);
+	return this->_pointValue / (2 << (this->_fractionalBit - 1));
 }
 
 float Fixed::toFloat(void) const {
-	return this->_pointValue / (2 << this->_fractionalBit);
+	return  this->_pointValue / (float) (2 << (this->_fractionalBit - 1));
 }
 
 Fixed	&Fixed::operator=(Fixed const &src) {
@@ -53,8 +52,8 @@ Fixed	&Fixed::operator=(Fixed const &src) {
 	return *this;
 }
 
-std::ofstream & operator<<(std::ofstream & o, Fixed & object) {
-	o << roundf(object.toFloat());
+std::ostream & operator<<(std::ostream & o, Fixed const & object) {
+	o << object.toFloat();
 	return o;
 }
 

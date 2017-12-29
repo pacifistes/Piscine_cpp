@@ -21,6 +21,6 @@ class Fixed {
 		int _pointValue;
 		static const int _fractionalBit; 
 };
-std::ofstream & operator<<(std::ofstream & o, Fixed & object);
+std::ostream & operator<<(std::ostream & o, Fixed const & object);
 
 #endif

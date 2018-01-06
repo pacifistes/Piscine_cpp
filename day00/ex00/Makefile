@@ -1,10 +1,10 @@
 NAME = megaphone
 FLAGS = -Wall -Wextra -Werror
-SRC = srcs/megaphone.cpp
+SRC = megaphone.cpp
 OBJ= $(SRC:.cpp=.o)
 CC = clang++
 
-%.o: %.c   $(CC) -o $@ -c $< $(FLAGS)
+%.o: %.cpp   $(CC) -o $@ -c $< $(FLAGS)
 
 all: $(NAME)
 

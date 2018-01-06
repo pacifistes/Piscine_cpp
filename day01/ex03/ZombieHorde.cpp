@@ -1,13 +1,12 @@
 #include "ZombieHorde.hpp"
+#include <ctime>
 
-std::string	random_name()
-{
+std::string	random_name() {
 	std::string name;
 	int i;
 	std::string	alpha("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ");
 
 	i = 0;
-	//srand(time(0));
 	while (i < 7)
 	{
 		name += alpha[rand() % alpha.size()];
@@ -17,35 +16,32 @@ std::string	random_name()
 	return name;
 }
 
-ZombieHorde::ZombieHorde( int N ) : _N(N)
-{
+ZombieHorde::ZombieHorde( int n ) : _n((n < 0) ? 0 : n) {
 	int i; 
 
 	i = 0;
-	this->_horde = new Zombie[N];
-	while (i < N)
+	std::cout << "Zombie horde constructor called" << std::endl;
+	this->_horde = new Zombie[this->_n];
+	while (i < this->_n)
 	{
 		this->_horde[i].set_name(random_name());
 		this->_horde[i].set_type("human");
 		i++;
 	}
-	std::cout << "constructor called" << std::endl;
 	return;
 }
 
-ZombieHorde::~ZombieHorde ( void )
-{
-	std::cout << "gjgdestructeur called" << std::endl;
+ZombieHorde::~ZombieHorde (void) {
+	std::cout << "Zombie horde destructeur called" << std::endl;
 	delete [] this->_horde;
 	return;
 }
 
-void	ZombieHorde::announce(void)
-{
+void	ZombieHorde::announce(void) {
 	int i;
 
 	i = 0;
-	while (i < this->_N)
+	while (i < this->_n)
 	{
 		this->_horde[i].announce();
 		i++;

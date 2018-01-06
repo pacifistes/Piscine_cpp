@@ -1,19 +1,16 @@
 #include "Brain.hpp"
 
-Brain::Brain( void )
-{
-	std::cout << "constructor called" << std::endl;
+Brain::Brain(void) {
+	std::cout << "Brain constructor called" << std::endl;
 	return;
 }
 
-Brain::~Brain ( void )
-{
-	std::cout << "destructeur called" << std::endl;
+Brain::~Brain (void) {
+	std::cout << "Brain destructeur called" << std::endl;
 	return;
 }
 
-std::string	Brain::identify()
-{
+std::string	Brain::identify() const {
 	std::stringstream	address;
 	address << this;
 	return address.str();

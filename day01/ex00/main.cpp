@@ -6,21 +6,21 @@ void	ponyOnTheHeap()
 
 	onHeap->tryToFly();
 	delete onHeap;
-	std::cout << "This is the end of the pony function" << std::endl;
 }
 
 void	ponyOnTheStack()
 {
 	Pony onStack = Pony("Galopin");
 	onStack.tryToFly();
-	std::cout << "This is the end of the function" << std::endl;
 }
 
 int main()
 {
 	std::cout << "pony on the heap : " << std::endl;
 	ponyOnTheHeap();
+	std::cout << "the ponyOnTheHeap function is finish" << std::endl;
 	std::cout << "pony on the stack : " << std::endl;
 	ponyOnTheStack();
+	std::cout << "the ponyOnTheStack function is finish" << std::endl;	
 	return 0;
 }

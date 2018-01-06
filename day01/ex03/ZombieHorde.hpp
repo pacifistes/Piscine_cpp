@@ -4,20 +4,15 @@
 #include "Zombie.hpp"
 #include <cstdlib>
 
-class ZombieHorde
-{
+class ZombieHorde {
+	private:
+		int		_n;
+		Zombie *_horde;
 
-private:
-	int		_N;
-	Zombie *_horde;
-
-
-public:
-	ZombieHorde( int N );
-	~ZombieHorde( void );
-	void	announce( void );
-
-
+	public:
+		ZombieHorde( int n );
+		~ZombieHorde( void );
+		void	announce( void );
 };
 
 #endif

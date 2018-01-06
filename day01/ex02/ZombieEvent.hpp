@@ -5,18 +5,16 @@
 #include <cstdlib>
 #include <ctime>
 
-class ZombieEvent
-{
-private:
-	std::string _type;
-public:
-	ZombieEvent( void );
-	~ZombieEvent( void );
+class ZombieEvent {
+	private:
+		std::string _type;
+	public:
+		ZombieEvent( void );
+		~ZombieEvent( void );
 	
-	void	setZombieType( std::string type );
-	Zombie*	newZombie(std::string name);
-	void	randomChump(void);
-
+		void	setZombieType( std::string type );
+		Zombie*	newZombie(std::string name) const;
+		void	randomChump(void) const;
 };
 
 #endif

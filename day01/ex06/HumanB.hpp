@@ -2,19 +2,15 @@
 # define HUMANB_CLASS_H
 #include "Weapon.hpp"
 
-class HumanB
-{
+class HumanB {
+	private:
+		Weapon *_club;
+		std::string _name;
 
-private:
-	Weapon *_club;
-	std::string _name;
-
-public:
-	HumanB( std::string name );
-	~HumanB( void );
-	void setWeapon(Weapon &club);
-	void attack();
-
+	public:
+		HumanB(std::string name);
+		~HumanB(void);
+		void setWeapon(Weapon &club);
+		void attack() const;
 };
-
 #endif

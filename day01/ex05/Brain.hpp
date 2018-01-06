@@ -4,14 +4,12 @@
 #include <string>
 #include <sstream>
 
-class Brain
-{
+class Brain {
 
 public:
-	Brain( void );
-	~Brain( void );
-	std::string identify();
-
+	Brain(void);
+	~Brain(void);
+	std::string identify() const;
 };
 
 #endif

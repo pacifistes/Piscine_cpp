@@ -2,7 +2,7 @@
 
 int		main()
 {
-	ZombieHorde*		horde;
+	ZombieHorde*	horde;
 
 	horde = new ZombieHorde(5);	
 	horde->announce();
